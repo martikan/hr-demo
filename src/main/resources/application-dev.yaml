@@ -1,0 +1,28 @@
+server:
+  port: ${PORT:8085}
+
+spring:
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/hr?sslmode=disable}
+    username: ${DATASOURCE_USER:root}
+    password: ${DATASOURCE_PASSWORD:aaa}
+  jpa:
+    show-sql: true
+    properties:
+      "[hibernate.format_sql]": true
+      "[hibernate.generate_statistics]": true
+  liquibase:
+    enabled: true
+    url: ${spring.datasource.url}
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+
+token:
+  expiration: ${TOKEN_EXPIRATION:864000000} # 10 days by default
+  secret: ${TOKEN_SECRET:asdWasdWASGHEt31Sh34As5}
+
+logging:
+  level:
+    "[org.springframework.web]": ERROR
+    "[com.martikan.restaurantapi]": DEBUG
+    "[org.hibernate]": DEBUG

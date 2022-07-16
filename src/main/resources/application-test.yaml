@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/hr?sslmode=disable}
+    username: ${DATASOURCE_USER:root}
+    password: ${DATASOURCE_PASSWORD:aaa}
+  jpa:
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    enabled: false
+
+token:
+  expiration: 864000000
+  secret: asdWasdWASGHEt31Sh34As5
+
+logging:
+  level:
+    "[org.springframework.web]": ERROR
+    "[com.martikan.quizapi]": DEBUG
+    "[org.hibernate]": DEBUG
