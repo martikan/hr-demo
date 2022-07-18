@@ -15,5 +15,7 @@ helm-test:
 
 helm-deploy:
 	helm upgrade --install api helm/hr -n hr
+helm-remove:
+	helm uninstall api -n hr
 
-.PHONY: postgres createdb dropdb start-dev helm-test helm-deploy
+.PHONY: postgres createdb dropdb start-dev helm-test helm-deploy helm-remove
