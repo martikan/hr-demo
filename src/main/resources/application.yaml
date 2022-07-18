@@ -31,5 +31,5 @@ management:
       enabled: true
 
 token:
-  expiration: ${TOKEN_EXPIRATION}
+  expiration: ${TOKEN_EXPIRATION:900000} #15m
   secret: ${TOKEN_SECRET}
