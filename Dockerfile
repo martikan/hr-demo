@@ -15,4 +15,5 @@ WORKDIR /opt/app
 
 COPY --from=build /usr/src/app/target/${JAR_FILE} /opt/app/api.jar
 
+EXPOSE 8080
 ENTRYPOINT ["java","-jar","api.jar"]
