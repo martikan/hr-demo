@@ -4,7 +4,7 @@ LABEL MAINTAINER="ric.martikan@gmail.com"
 
 WORKDIR /usr/src/app
 COPY . /usr/src/app
-RUN mvn package 
+RUN mvn clean package -Dmaven.test.skip=true
 
 # For Java 11, 
 FROM adoptopenjdk/openjdk11:alpine-jre
